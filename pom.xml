@@ -24,7 +24,30 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
     <aws-java-sdk.version>1.11.221</aws-java-sdk.version>
+    
+    <telstra.releases.id>telstra-releases</telstra.releases.id>
+    <telstra.releases.url>https://repo1.ae.sda.corp.telstra.com/nexus/content/repositories/releases</telstra.releases.url>
+    <telstra.snapshots.id>telstra-snapshots</telstra.snapshots.id>
+    <telstra.snapshots.url>https://repo1.ae.sda.corp.telstra.com/nexus/content/repositories/snapshots</telstra.snapshots.url>
+
   </properties>
+  
+    <distributionManagement>
+        <repository>
+            <name>Telstra Releases Repository</name>
+            <id>${telstra.releases.id}</id>
+            <url>${telstra.releases.url}</url>
+            <layout>default</layout>
+            <uniqueVersion>false</uniqueVersion>
+        </repository>
+        <snapshotRepository>
+            <name>Telstra Snapshots Repository</name>
+            <id>${telstra.snapshots.id}</id>
+            <url>${telstra.snapshots.url}</url>
+            <layout>default</layout>
+            <uniqueVersion>true</uniqueVersion>
+        </snapshotRepository>
+    </distributionManagement>
 
   <dependencies>
     <dependency>
